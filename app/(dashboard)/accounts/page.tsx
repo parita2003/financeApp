@@ -12,7 +12,7 @@ function AccountsPage() {
     const accountsQuery = useGetAccounts();
 
     // Extracting the 'data' array from the API response
-    const accounts = accountsQuery.data?.data || []; // fallback to an empty array if data is undefined
+    const accounts = accountsQuery.data || []; // fallback to an empty array if data is undefined
 
     return (
         console.log(accounts),
