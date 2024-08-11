@@ -1,5 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { useOpenAccount } from "@/features/accounts/hooks/use-open-acc-ed";
+import { Edit } from "lucide-react";
 import { ColumnDef } from "@tanstack/react-table";
 import { client } from '@/lib/hono';
 import { InferResponseType } from "hono";
@@ -13,8 +16,15 @@ export const columns: ColumnDef<ResponseType>[] = [
     accessorKey: "name",
     header: "Name",
   },
-  // {
-  //   id: "actions",
-  //   cell: ({ row }) => <ActionNew id={row.original.id} />
-  // },
+  {
+    id: "actions",
+    cell: ({ row }) => {
+      const { onopen } = useOpenAccount();
+      const rowData = row.original as ResponseType;
+
+      return (
+        h
+      );
+    },
+  },
 ];

@@ -5,10 +5,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import {client} from "@/lib/hono"
 import { toast } from "sonner";
 
-type ResponseType = InferResponseType<typeof client.api.accounts.$post>;
-type ResquestType = InferRequestType<typeof client.api.accounts.$post>["json"];
+type ResponseType = InferResponseType<typeof client.api.accounts[":id"]["$patch"]>;
+type ResquestType = InferRequestType<typeof client.api.accounts[":id"]["$patch"]>["json"];
 
-export const useCreateAccount = () => {
+export const useEditAccount = () => {
     const queryClient = useQueryClient();
 
     const mutation = useMutation<
